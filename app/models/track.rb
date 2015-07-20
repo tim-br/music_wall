@@ -1,5 +1,4 @@
 class Track < ActiveRecord::Base
-  validates :title, presence: true, length: { maximum: 40 }
-  validates :comment, presence: true, length: { maximum: 140 }
+  validates :track_title, presence: true, length: { maximum: 40 }
   validates :author, presence: true, length: { maximum: 25 }
 end

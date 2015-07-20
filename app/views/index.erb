@@ -1,1 +1,8 @@
-<h1>Home Page</h1>
+<% @tracks.each do |track| %>
+  <div class="message">
+    <h3> Track Title: <%= track.track_title %><small>    Author:      <%= track.author %></small> </h3>
+
+  </div>
+<% end %>
+
+<a href="/new">Post a new track... </a>
