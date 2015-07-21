@@ -1,8 +1,24 @@
+<% if session["user"]  %>
+  <p> Hello  <%= session["user"].user_name %> Jeff</p>
+<% end %>
+
+
 <% @tracks.each do |track| %>
   <div class="message">
-    <h3> Track Title: <%= track.track_title %><small>    Author:      <%= track.author %></small> </h3>
+    <h3> Track Title: <%= track.track_title  %><small>    Author:      <%= track.author %></small> </h3>
+    <h5><%=
+      #binding.pry
+      Vote.where(track_id: track.id).count
 
+    %> </h5>
+
+    <h5><a href="/vote/<%= track.id %>">Vote for this track!!!</a> </h5>
   </div>
 <% end %>
 
+<div>
 <a href="/new">Post a new track... </a>
+<a href="/register"> Register... </a>
+<a href="/login"> Login... </a>
+
+</div>

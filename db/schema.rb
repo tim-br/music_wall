@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150720162905) do
+ActiveRecord::Schema.define(version: 20150720221425) do
 
   create_table "messages", force: :cascade do |t|
     t.string "song_title"
@@ -25,6 +25,18 @@ ActiveRecord::Schema.define(version: 20150720162905) do
     t.string   "url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "user_name"
+    t.string   "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer "track_id", null: false
+    t.integer "user_id",  null: false
   end
 
 end
